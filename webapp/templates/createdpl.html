@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DamStream</title>
+
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet"/>
+
+    <link href="{{ url_for('static', filename='css/jumbotron-narrow.css') }}" type="text/css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        {% include 'includes/topmenu.html' %}
+    </div>
+    <h3>Choose Connection Type</h3>
+    <br/>
+    <form class="form-horizontal" role="form" method="POST" action="/create">
+        <form>
+            <button type="button" class="btn btn-primary btn-lg disabled">
+                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Database: Connect and Injust Data from Databases
+            </button>
+        </form>
+        <br/>
+        <form action="/createrestdpl">
+            <button type="submit" class="btn btn-primary btn-lg">
+                <span class="glyphicon glyphicon-random" aria-hidden="true"></span> REST: Ingest Data From A Restful API
+            </button>
+        </form>
+        <br/>
+        <form>
+            <button type="button disabled" class="btn btn-primary btn-lg disabled">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> SOAP: Ingest Data From A SOAP API
+            </button>
+        </form>
+        <br/>
+        <form>
+            <button type="button disabled" class="btn btn-primary btn-lg disabled">
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> STREAM: Ingest Data Real Time
+            </button>
+        </form>
+
+    </form>
+
+</div>
+</body>
+
+</html>

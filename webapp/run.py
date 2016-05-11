@@ -2,8 +2,7 @@ __author__ = 'Ekhtiar'
 
 from flask import Flask
 
-application = Flask('Portfolio')
-app = application
+app = Flask(__name__)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)

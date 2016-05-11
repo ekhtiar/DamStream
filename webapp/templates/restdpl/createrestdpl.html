@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DamStream</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/jumbotron-narrow.css') }}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        {% include 'includes/topmenu.html' %}
+    </div>
+    <h3>Choose Authentication Type</h3>
+    <br/>
+    <form>
+        <button type="buton" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Simple: No Authentication Required
+            2.0 Standard
+        </button>
+    </form>
+    <br/>
+    <form action="/createrestbasicdpl">
+        <button type="submit" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Basic: Basic Authentication over
+            HTTP
+        </button>
+    </form>
+    <br/>
+    <form>
+        <button type="buton" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> OAuth 2.0: Authentication based on OAuth
+            2.0 Standard
+        </button>
+    </form>
+
+
+
+</div>
+</body>
+
+</html>
