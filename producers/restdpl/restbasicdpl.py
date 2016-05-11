@@ -29,12 +29,18 @@ def get_data(increment, payload, url, headers, directory):
     r = requests.post(url,
                       headers=headers,
                       data=json.dumps(payload))
+    # check if reply is ok, if not then exit
+    if not r.ok:
+        return False
     # convert it to json
     js = json.loads(r.content)
     # change it to data frame
     df = pandas.DataFrame.from_dict(js)
     # if data frame is empty exit function with False as output
     if df.empty:
+        return False
+    # if we don't have 100 data then don't commit
+    if df.shape[0] != 100:
         return False
     # if it isn't empty write to output and return true
     df.to_csv(directory + str(increment) + ".csv", index=False)
