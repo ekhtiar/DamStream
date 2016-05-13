@@ -7,6 +7,7 @@ from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetada
 from dbmodels.connection import getengine
 import ast
 from urllib import urlencode
+from outpdrivers.tokafka import send
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -18,32 +19,32 @@ from urllib import urlencode
 # increment = (String) the new value for the incremental variable
 # payload = (String) String variable of the payload data, the string will be converted to dict
 # url = (String) url of the endpoint
-def get_data(increment, payload, url, headers, directory):
+def get_data(increment, dplname, payload, url, headers):
     # Concatanate the incremental value with the url string (assuming the incremental variable
     # has been formatted as the last variable in the url parameter
-    url = url + str(increment)
+    currenturl = url + str(increment)
     # convert to dict from string
     payload = ast.literal_eval(payload)
     headers = ast.literal_eval(headers)
     # use requests library to get data
-    r = requests.post(url,
+    r = requests.post(currenturl,
                       headers=headers,
                       data=json.dumps(payload))
     # check if reply is ok, if not then exit
     if not r.ok:
         return False
-    # convert it to json
-    js = json.loads(r.content)
-    # change it to data frame
-    df = pandas.DataFrame.from_dict(js)
-    # if data frame is empty exit function with False as output
-    if df.empty:
+
+    # also check if the next set is available, if it isn't exit
+    nexturl = url + str(increment + 1)
+    nextr = requests.post(nexturl,
+                          headers=headers,
+                          data=json.dumps(payload))
+    if not nextr.ok:
         return False
-    # if we don't have 100 data then don't commit
-    if df.shape[0] != 100:
-        return False
-    # if it isn't empty write to output and return true
-    df.to_csv(directory + str(increment) + ".csv", index=False)
+
+    # if write to output and return true
+    send(dplname=dplname, msg=r.content)
+
     return True
 
 
@@ -55,6 +56,7 @@ def pull(dplname):
 
     # Get the info object for this dpl
     restbasicdplinfo = session.query(RestbasicdplInfo).filter(RestbasicdplInfo.dplid == dplname).first()
+
     # Try to get the initial value where we are supposed to start from
     # Get the last executed value, if it is there, increase it by one to get the next value
     try:
@@ -73,10 +75,8 @@ def pull(dplname):
     url = restbasicdplinfo.url + "?" + urlencode(urlparameters) + "&" + restbasicdplinfo.incrementvariable + "="
     # get headers
     headers = restbasicdplinfo.headers
-    # get output directory
-    directory = "C:/Python_Workspace/test"
 
-    while get_data(incrementvalue, payload=payload, url=url, headers=headers, directory=directory):
+    while get_data(increment=incrementvalue, dplname=dplname, payload=payload, url=url, headers=headers):
         # print output for logging
         print 'got data for ' + str(incrementvalue)
         # create data object

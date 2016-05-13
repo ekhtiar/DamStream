@@ -73,12 +73,12 @@ def createrestjsondpl():
             session.commit()
 
             # create dag
-            createdag(pipelinename=dplid, scheduleinterval = scheduleinterval)
+            createdag(dplid=dplid, scheduleinterval=scheduleinterval)
+
         except KeyError, e:
             print 'KeyError  - reason %s' % str(e)
         except IndexError, e:
             print 'IndexError  - reason %s' % str(e)
-
 
         return render_template('restdpl/restbasicdpl/createrestbasicdpl.html')
     else:
@@ -93,7 +93,7 @@ def create_offset():
         scheduleinterval = request.form['schedule_interval']
         headers = request.form['headers']
         payload = request.form['payload']
-        createdag(pipelinename=pipelinename, url=url, scheduleinterval=scheduleinterval,
+        createdag(dplid=pipelinename, url=url, scheduleinterval=scheduleinterval,
                   headers=headers, payload=payload)
         return render_template('create2.html')
     else:
