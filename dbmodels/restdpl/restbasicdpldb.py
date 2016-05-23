@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, String, Date, DateTime, INT, TEXT
+from sqlalchemy import Column, String, Date, DateTime, INT, TEXT
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -32,9 +32,11 @@ class RestbasicdplInfo(Base):
     method = Column('method', String(50))
     headers = Column('headers', TEXT)
     payload = Column('payload', TEXT)
+    orgoputtype = Column('original_output_type', String(15))
+    enhoputtype = Column('enhanced_output_type', String(15))
 
     def __init__(self, dplid, createdat, startdate, url, incrementtype, incrementvariable, initialincrementvalue,
-                 incrementby, urlparameters, scheduleinterval, method, headers, payload):
+                 incrementby, urlparameters, scheduleinterval, method, headers, payload, orgoputtype, enhoputtype):
         self.dplid = dplid
         self.createdat = createdat
         self.startdate = startdate
@@ -48,3 +50,5 @@ class RestbasicdplInfo(Base):
         self.method = method
         self.headers = headers
         self.payload = payload
+        self.orgoputtype = orgoputtype
+        self.enhoputtype = enhoputtype

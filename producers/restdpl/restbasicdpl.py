@@ -1,13 +1,13 @@
-import requests
-import json
-import pandas
-import datetime
-from sqlalchemy.orm import sessionmaker
-from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
-from dbmodels.connection import getengine
 import ast
+import datetime
+import json
 from urllib import urlencode
-from outpdrivers.tokafka import send
+
+import requests
+from sqlalchemy.orm import sessionmaker
+
+from dbmodels.connection import getengine
+from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -19,7 +19,8 @@ from outpdrivers.tokafka import send
 # increment = (String) the new value for the incremental variable
 # payload = (String) String variable of the payload data, the string will be converted to dict
 # url = (String) url of the endpoint
-def get_data(increment, dplname, payload, url, headers):
+
+def get_data(increment, dplid, payload, url, headers):
     # Concatanate the incremental value with the url string (assuming the incremental variable
     # has been formatted as the last variable in the url parameter
     currenturl = url + str(increment)
@@ -43,25 +44,26 @@ def get_data(increment, dplname, payload, url, headers):
         return False
 
     # if write to output and return true
-    send(dplname=dplname, msg=r.content)
+    #send(dplid=dplid, msg=r.content)
+    print r._content
 
     return True
 
 
-def pull(dplname):
+def pull(dplid):
     # Connect to database and get session object
     engine = getengine()
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Get the info object for this dpl
-    restbasicdplinfo = session.query(RestbasicdplInfo).filter(RestbasicdplInfo.dplid == dplname).first()
+    restbasicdplinfo = session.query(RestbasicdplInfo).filter(RestbasicdplInfo.dplid == dplid).first()
 
     # Try to get the initial value where we are supposed to start from
     # Get the last executed value, if it is there, increase it by one to get the next value
     try:
         restbasicdplmetadata = session.query(RestbasicdplMetadata).filter(
-            RestbasicdplMetadata.dplid == dplname).order_by(RestbasicdplMetadata.id.desc()).first()
+            RestbasicdplMetadata.dplid == dplid).order_by(RestbasicdplMetadata.id.desc()).first()
         incrementvalue = restbasicdplmetadata.incrementvalue + 1
     # if there is no last executed value then get initial incremental value
     except:
@@ -76,11 +78,11 @@ def pull(dplname):
     # get headers
     headers = restbasicdplinfo.headers
 
-    while get_data(increment=incrementvalue, dplname=dplname, payload=payload, url=url, headers=headers):
+    while get_data(increment=incrementvalue, dplid=dplid, payload=payload, url=url, headers=headers):
         # print output for logging
         print 'got data for ' + str(incrementvalue)
         # create data object
-        restbasicdplmetadata = RestbasicdplMetadata(dplid=dplname,
+        restbasicdplmetadata = RestbasicdplMetadata(dplid=dplid,
                                                     executiondatetime=datetime.datetime.now(),
                                                     incrementvalue=incrementvalue)
         # store data object
