@@ -2,13 +2,13 @@ import ast
 import datetime
 import json
 from urllib import urlencode
-
+import logging
 import requests
 from sqlalchemy.orm import sessionmaker
 
 from dbmodels.connection import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
-
+from outpdrivers.generic.tokafka import sendtokafka
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Description: This function has the logic to get the data. If the data is available
@@ -20,10 +20,10 @@ from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetada
 # payload = (String) String variable of the payload data, the string will be converted to dict
 # url = (String) url of the endpoint
 
-def get_data(increment, dplid, payload, url, headers):
+def get_data(incrementvalue, dplid, payload, url, headers):
     # Concatanate the incremental value with the url string (assuming the incremental variable
     # has been formatted as the last variable in the url parameter
-    currenturl = url + str(increment)
+    currenturl = url + str(incrementvalue)
     # convert to dict from string
     payload = ast.literal_eval(payload)
     headers = ast.literal_eval(headers)
@@ -36,7 +36,7 @@ def get_data(increment, dplid, payload, url, headers):
         return False
 
     # also check if the next set is available, if it isn't exit
-    nexturl = url + str(increment + 1)
+    nexturl = url + str(incrementvalue + 1)
     nextr = requests.post(nexturl,
                           headers=headers,
                           data=json.dumps(payload))
@@ -44,8 +44,8 @@ def get_data(increment, dplid, payload, url, headers):
         return False
 
     # if write to output and return true
-    #send(dplid=dplid, msg=r.content)
-    print r._content
+    sendtokafka(dplid=dplid, msg=r.content)
+    logging.info('send data to kafka for ' + str(incrementvalue))
 
     return True
 
@@ -78,9 +78,9 @@ def pull(dplid):
     # get headers
     headers = restbasicdplinfo.headers
 
-    while get_data(increment=incrementvalue, dplid=dplid, payload=payload, url=url, headers=headers):
+    while get_data(incrementvalue=incrementvalue, dplid=dplid, payload=payload, url=url, headers=headers):
         # print output for logging
-        print 'got data for ' + str(incrementvalue)
+        logging.info('got data for ' + str(incrementvalue))
         # create data object
         restbasicdplmetadata = RestbasicdplMetadata(dplid=dplid,
                                                     executiondatetime=datetime.datetime.now(),

@@ -6,7 +6,7 @@
 
 from pykafka import KafkaClient
 
-def send(dplname, msg):
+def sendtokafka(dplname, msg):
 
     client = KafkaClient(hosts="DSambari.novalocal:6667")
     topic = client.topics['damstream.'+dplname]

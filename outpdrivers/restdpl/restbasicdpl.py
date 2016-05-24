@@ -1,10 +1,10 @@
 from dbmodels.connection import getengine
 from sqlalchemy.orm import sessionmaker
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo
-from dbmodels.outpdrivers.hdfs import HDFSConfig, HDFSMetadata
+from dbmodels.outpdrivers.hdfs import HDFSConfig
 from outpconns.kafkaconn import getkafkaclient
 from outpconns.hdfsconn import gethdfsclient
-
+import logging
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Description: This function has the logic to get the data. If the data is available
@@ -35,6 +35,7 @@ def write(dplid):
     kafkaclient = getkafkaclient()
     # Get the appropriate topic
     topic = kafkaclient.topics['damstream.' + restbasicdplinfo.dplid]
+    logging.info('subscribed to topic: damstream.' + restbasicdplinfo.dplid)
     # Get balanced consumer
     balanced_consumer = topic.get_balanced_consumer(consumer_group='damstream',
                                                     auto_commit_enable=True,
@@ -47,4 +48,5 @@ def write(dplid):
     for msg in balanced_consumer:
         if msg is not None:
             if restbasicdplinfo.orgoputtype == 'hdfs':
+                logging.info('writing to '+hdfsconfig.directory + hdfsconfig.filename + str(msg.offset))
                 hdfsclient.write(hdfs_path=hdfsconfig.directory + hdfsconfig.filename + str(msg.offset), data=msg.value)

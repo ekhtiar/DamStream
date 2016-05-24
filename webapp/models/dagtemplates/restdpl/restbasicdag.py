@@ -28,7 +28,7 @@ def createdag(dplid, scheduleinterval):
     fo.write(bashoperator(taskid= dplid+"_write",
                           bash_command='"python -c \\"from outpdrivers.restdpl.restbasicdpl import write; write(\''+dplid+'\')\\""'))
     fo.write("# Set Dependecy \n")
-    fo.write(dplid+"_pull.setdownstream("+dplid+"_write)")
+    fo.write(dplid+"_pull.set_downstream("+dplid+"_write)")
     # Close open file
     fo.close()
     return
