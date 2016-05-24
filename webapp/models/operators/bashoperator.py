@@ -1,7 +1,7 @@
-def bashoperator(dplid, bash_command):
+def bashoperator(taskid, bash_command):
 
-    str = "pull_"+dplid+" = BashOperator( \n" \
-          "    task_id='pull_"+dplid+"', \n" \
+    str = taskid+" = BashOperator( \n" \
+          "    task_id='"+taskid+"', \n" \
           "    bash_command="+bash_command+",\n" \
           "    dag=dag)\n"
 

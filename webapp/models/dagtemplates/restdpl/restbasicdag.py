@@ -20,11 +20,15 @@ def createdag(dplid, scheduleinterval):
                                       "    schedule_interval='@" + scheduleinterval + "')")
     fo.write("\n")
 
-    fo.write("#Call Bash Operator \n")
+    fo.write("# Pull Data From Source \n")
 
-    fo.write(bashoperator(dplid= dplid,
+    fo.write(bashoperator(taskid= dplid+"_pull",
                           bash_command='"python -c \\"from producers.restdpl.restbasicdpl import pull; pull(\''+dplid+'\')\\""'))
-
+    fo.write("# Write Data To Sink \n")
+    fo.write(bashoperator(taskid= dplid+"_write",
+                          bash_command='"python -c \\"from outpdrivers.restdpl.restbasicdpl import write; write(\''+dplid+'\')\\""'))
+    fo.write("# Set Dependecy \n")
+    fo.write(dplid+"_pull.setdownstream("+dplid+"_write)")
     # Close open file
     fo.close()
     return
