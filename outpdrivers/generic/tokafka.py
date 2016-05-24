@@ -6,9 +6,9 @@
 
 from pykafka import KafkaClient
 
-def sendtokafka(dplname, msg):
+def sendtokafka(dplid, msg):
 
     client = KafkaClient(hosts="DSambari.novalocal:6667")
-    topic = client.topics['damstream.'+dplname]
+    topic = client.topics['damstream.'+dplid]
     with topic.get_sync_producer() as producer:
         producer.produce(msg)
