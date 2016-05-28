@@ -2,8 +2,8 @@ from dbmodels.connection import getengine
 from sqlalchemy.orm import sessionmaker
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo
 from dbmodels.outpdrivers.hdfs import HDFSConfig
-from outpconns.kafkaconn import getkafkaclient
-from outpconns.hdfsconn import gethdfsclient
+from connections.kafkaconn import getkafkaclient
+from connections.hdfsconn import gethdfsclient
 import logging
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

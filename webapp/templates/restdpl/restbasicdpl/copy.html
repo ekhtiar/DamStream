@@ -122,14 +122,35 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-4" for="output_type">Output Type: </label>
+            <label class="control-label col-sm-4" for="original_output_type">Keep Original Data</label>
+                <div class="col-sm-8">
+                <select class="form-control" id="original_output_type" name="original_output_type">
+                    <option value="hdfs">Yes, Store to HDFS</option>
+                    <option value="none">No, Purge Original Data</option>
+                    <option value="kafka">Yes, Store to Kafka</option>
+                    <option value="hive">Yes, Store to Hive</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="enhanced_output_type">Enhance Data</label>
+                <div class="col-sm-8">
+                <select class="form-control" id="enhanced_output_type" name="enhanced_output_type">
+                    <option value="none">No Transformation Required</option>
+                    <option value="hdfs">Yes, Transform and Store to HDFS</option>
+                    <option value="kafka">Yes, Transform and Store to Kafka</option>
+                    <option value="hive">Yes, Transform and Store to Hive</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="transformation_functions">Transformation Functions: </label>
 
             <div class="col-sm-8">
-                <select class="form-control" id="output_type" name="output_type">
-                    <option>HDFS</option>
-                    <option>Kafka</option>
-                    <option>Hive</option>
-                </select>
+                <input type="text" class="form-control" id="transformation_functions" name="transformation_functions"
+                       placeholder="i.e. todataframe, countrows">
             </div>
         </div>
 

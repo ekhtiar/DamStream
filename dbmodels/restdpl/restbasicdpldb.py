@@ -32,11 +32,11 @@ class RestbasicdplInfo(Base):
     method = Column('method', String(50))
     headers = Column('headers', TEXT)
     payload = Column('payload', TEXT)
-    orgoputtype = Column('original_output_type', String(15))
-    enhoputtype = Column('enhanced_output_type', String(15))
+    outputs = Column('outputs', TEXT)
+    funcconfigs = Column('function_configurations', TEXT)
 
     def __init__(self, dplid, createdat, startdate, url, incrementtype, incrementvariable, initialincrementvalue,
-                 incrementby, urlparameters, scheduleinterval, method, headers, payload, orgoputtype, enhoputtype):
+                 incrementby, urlparameters, scheduleinterval, method, headers, payload, outputs, funcconfigs):
         self.dplid = dplid
         self.createdat = createdat
         self.startdate = startdate
@@ -50,5 +50,5 @@ class RestbasicdplInfo(Base):
         self.method = method
         self.headers = headers
         self.payload = payload
-        self.orgoputtype = orgoputtype
-        self.enhoputtype = enhoputtype
+        self.outputs = outputs
+        self.funcconfigs = funcconfigs

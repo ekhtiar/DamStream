@@ -122,26 +122,17 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-4" for="original_output_type">Keep Original Data</label>
+            <label class="control-label col-sm-4" for="outputs">Define Outputs</label>
                 <div class="col-sm-8">
-                <select class="form-control" id="original_output_type" name="original_output_type">
-                    <option value="hdfs">Yes, Store to HDFS</option>
-                    <option value="none">No, Purge Original Data</option>
-                    <option value="kafka">Yes, Store to Kafka</option>
-                    <option value="hive">Yes, Store to Hive</option>
-                </select>
+                <textarea class="form-control" id="outputs" name="outputs" rows="3"></textarea>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-4" for="enhanced_output_type">Enhance Data</label>
-                <div class="col-sm-8">
-                <select class="form-control" id="enhanced_output_type" name="enhanced_output_type">
-                    <option value="none">No Transformation Required</option>
-                    <option value="hdfs">Yes, Transform and Store to HDFS</option>
-                    <option value="kafka">Yes, Transform and Store to Kafka</option>
-                    <option value="hive">Yes, Transform and Store to Hive</option>
-                </select>
+            <label class="control-label col-sm-4" for="function_configurations">Function Configurations: </label>
+
+            <div class="col-sm-8">
+                <textarea class="form-control" id="function_configurations" name="function_configurations" rows="3"></textarea>
             </div>
         </div>
 

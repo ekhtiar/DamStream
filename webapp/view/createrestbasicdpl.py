@@ -1,6 +1,7 @@
 from webapp.models.dagtemplates.restdpl.restbasicdag import createdag
 from sqlalchemy.orm import sessionmaker
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo
+from dbmodels.dplmain import DplMain
 from dbmodels.connection import getengine
 from datetime import date
 from flask import redirect
@@ -20,8 +21,8 @@ def post(request):
     method = request.form['method']
     headers = request.form['headers']
     payload = request.form['payload']
-    orgoputtype = request.form['original_output_type']
-    enhoputtype = request.form['enhanced_output_type']
+    outputs = request.form['outputs']
+    funcconfigs = request.form['function_configurations']
     # Make Created At
     createdat = date.today()
 
@@ -43,10 +44,18 @@ def post(request):
                                           method=method,
                                           headers=headers,
                                           payload=payload,
-                                          orgoputtype=orgoputtype,
-                                          enhoputtype=enhoputtype)
+                                          outputs=outputs,
+                                          funcconfigs=funcconfigs)
+        dplmain = DplMain(dplid=dplid,
+                          createdat=createdat,
+                          startdate=startdate,
+                          dpltype='restbasicdpl',
+                          scheduleinterval=scheduleinterval,
+                          outputs=outputs,
+                          funcconfigs=funcconfigs)
 
         session = Session()
+        session.add(dplmain)
         session.add(restbasicdpldb)
         session.commit()
 
@@ -58,20 +67,4 @@ def post(request):
     except IndexError, e:
         print 'IndexError  - reason %s' % str(e)
 
-    # According to the output option, load the page to enter output configs
-    if orgoputtype == 'kafka':
-        return redirect('outpdrivers/kafka?dplid=' + dplid + '&outptype=original')
-    if orgoputtype == 'hdfs':
-        return redirect('outpdrivers/hdfs?dplid=' + dplid + '&outptype=original')
-    if orgoputtype == 'hive':
-        return redirect('outpdrivers/hive?dplid=' + dplid + '&outptype=original')
-    # If original output type is none check for enhanced output type
-    if orgoputtype == 'none':
-        if enhoputtype == 'kafka':
-            return redirect('outpdrivers/kafka?dplid=' + dplid + '&outptype=enhanced')
-        if enhoputtype == 'hdfs':
-            return redirect('outpdrivers/hdfs?dplid=' + dplid + '&outptype=enhanced')
-        if enhoputtype == 'hive':
-            return redirect('outpdrivers/hive?dplid=' + dplid + '&outptype=enhanced')
-        if enhoputtype == 'none':
-            return redirect('/')
+    return redirect("/")
