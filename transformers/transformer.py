@@ -1,15 +1,18 @@
 from eerl.parser.fromjson import jsontodataframe
+from eerl.parser.fromdf import dataframetojson
 from eerl.report.fromdf import countrows
 from eerl.column.fromdf import keep
+
 
 # tranfuncs = ['todataframe', 'keep']
 # funcconfigs = [{'func_name': 'keep', 'column': 'history'}]
 
 def transform(msg, tranfuncs, funcconfigs):
 
-    eerl = {'todataframe': jsontodataframe,
+    eerl = {'jsontodataframe': jsontodataframe,
             'countrows': countrows,
             'keep': keep,
+            'dataframetojson': dataframetojson,
             }
 
     for func in tranfuncs:

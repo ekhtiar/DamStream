@@ -22,9 +22,11 @@ class HDFSMetadata(Base):
     __tablename__ = 'hdfs_metadata'
     id = Column('id', INT, primary_key=True)
     dplid = Column('dpl_id', String(20), primary_key=True)
+    outputname = Column('output_name', String(20))
     uniquefilevalue = Column('unique_file_value', String(50))
 
-    def __init__(self, id, dplid, uniquefilevalue):
+    def __init__(self, id, dplid, outputname, uniquefilevalue):
         self.id = id
         self.dplid = dplid
+        self.outputname = outputname
         self.uniquefilevalue = uniquefilevalue

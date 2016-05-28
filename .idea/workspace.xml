@@ -3,43 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="987305d6-4af8-4035-a3ed-c4bd446e4e3e" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/airflow/dags/restdag.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/connections/mysqlconn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbmodels/dplmain.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/column/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/column/fromdf.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/parser/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/parser/fromjson.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/report/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/report/fromdf.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outpdrivers/tokafka.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transformers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transformers/dummystring.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transformers/transformer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/writers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/writers/testme.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/writers/writer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/writers/writertest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/parser/fromdf.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/airflow/dags/testdruid.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/templates/create2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/templates/outpdrivers/hdfs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/templates/outpdrivers/kafka.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/outpconns/__init__.py" afterPath="$PROJECT_DIR$/connections/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/outpconns/hdfsconn.py" afterPath="$PROJECT_DIR$/connections/hdfsconn.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/outpconns/kafkaconn.py" afterPath="$PROJECT_DIR$/connections/kafkaconn.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/templates/outpdrivers/hive.html" afterPath="$PROJECT_DIR$/webapp/templates/restdpl/restbasicdpl/copy.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webapp/view/hdfs.py" afterPath="$PROJECT_DIR$/webapp/view/outpdrivershdfs.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbmodels/connection.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/generic/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/generic/tohdfs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/generic/tohive.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/generic/tokafka.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/restdpl/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl2.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/transformers/dummystring.py" afterPath="$PROJECT_DIR$/eerl/dummystring.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/airflow" afterPath="$PROJECT_DIR$/airflow" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodels/restdpl/restbasicdpldb.py" afterPath="$PROJECT_DIR$/dbmodels/restdpl/restbasicdpldb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl.py" afterPath="$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/templates/restdpl/restbasicdpl/createrestbasicdpl.html" afterPath="$PROJECT_DIR$/webapp/templates/restdpl/restbasicdpl/createrestbasicdpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connections/kafkaconn.py" afterPath="$PROJECT_DIR$/connections/kafkaconn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" afterPath="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outpdrivers/tohdfs.py" afterPath="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outpdrivers/tokafka.py" afterPath="$PROJECT_DIR$/outpdrivers/tokafka.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/producers/restdpl/restbasicdpl.py" afterPath="$PROJECT_DIR$/producers/restdpl/restbasicdpl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transformers/transformer.py" afterPath="$PROJECT_DIR$/transformers/transformer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py" afterPath="$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/view/createrestbasicdpl.py" afterPath="$PROJECT_DIR$/webapp/view/createrestbasicdpl.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/views.py" afterPath="$PROJECT_DIR$/webapp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writers/writer.py" afterPath="$PROJECT_DIR$/writers/writer.py" />
     </list>
     <ignored path="DSadapter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,13 +74,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="writer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/writers/writer.py">
+      <file leaf-file-name="fromdf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eerl/parser/fromdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3764706">
-              <caret line="70" column="82" selection-start-line="70" selection-start-column="82" selection-end-line="70" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#89#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transformer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5138504">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,16 +115,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webapp/models/operators/pythonoperator.py" />
         <option value="$PROJECT_DIR$/outpdrivers/kafka.py" />
-        <option value="$PROJECT_DIR$/outpdrivers/tokafka.py" />
         <option value="$PROJECT_DIR$/dbmodels/connection.py" />
         <option value="$PROJECT_DIR$/airflow/dags/payconiq1.py" />
         <option value="$PROJECT_DIR$/webapp/templates/outpdrives/kafka.html" />
         <option value="$PROJECT_DIR$/webapp/templates/outpdrivers/kafka.html" />
-        <option value="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
         <option value="$PROJECT_DIR$/kafkautils/connection.py" />
-        <option value="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" />
         <option value="$PROJECT_DIR$/webapp/views/createrestbasicdpl.py" />
         <option value="$PROJECT_DIR$/damstream.py" />
         <option value="$PROJECT_DIR$/webapp/view/hdfs.py" />
@@ -136,7 +129,6 @@
         <option value="$PROJECT_DIR$/eerl/report/schema/json.py" />
         <option value="$PROJECT_DIR$/airflow/dags/Payconiq15.py" />
         <option value="$PROJECT_DIR$/webapp/models/operators/bashoperator.py" />
-        <option value="$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py" />
         <option value="$PROJECT_DIR$/outpdrivers/generic/tokafka.py" />
         <option value="$PROJECT_DIR$/eerl/parser/test.py" />
         <option value="$PROJECT_DIR$/transformers/python.py" />
@@ -159,16 +151,21 @@
         <option value="$PROJECT_DIR$/eerl/parser/fromjson.py" />
         <option value="$PROJECT_DIR$/eerl/column/fromdf.py" />
         <option value="$PROJECT_DIR$/webapp/views.py" />
-        <option value="$PROJECT_DIR$/transformers/transformer.py" />
         <option value="$PROJECT_DIR$/webapp/templates/restdpl/restbasicdpl/createrestbasicdpl.html" />
         <option value="$PROJECT_DIR$/dbmodels/dplmain.py" />
         <option value="$PROJECT_DIR$/dbmodels/restdpl/restbasicdpldb.py" />
-        <option value="$PROJECT_DIR$/webapp/view/createrestbasicdpl.py" />
         <option value="$PROJECT_DIR$/writers/testme.py" />
         <option value="$PROJECT_DIR$/writers/writertest.py" />
+        <option value="$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py" />
+        <option value="$PROJECT_DIR$/webapp/view/createrestbasicdpl.py" />
         <option value="$PROJECT_DIR$/producers/restdpl/restbasicdpl.py" />
+        <option value="$PROJECT_DIR$/outpdrivers/tokafka.py" />
         <option value="$PROJECT_DIR$/connections/kafkaconn.py" />
+        <option value="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" />
         <option value="$PROJECT_DIR$/writers/writer.py" />
+        <option value="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
+        <option value="$PROJECT_DIR$/eerl/parser/fromdf.py" />
+        <option value="$PROJECT_DIR$/transformers/transformer.py" />
       </list>
     </option>
   </component>
@@ -209,6 +206,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,13 +235,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="writers" />
+              <option name="myItemId" value="transformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,19 +249,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\column" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\transformer" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\writers" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\writers\restdpl" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\connections" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\outpdrivers\generic" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\producers\restdpl\restbasicdpl" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp\templates\restdpl\restjsondpl" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp\templates\includes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\parser" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\column" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\transformer" />
     </key>
   </component>
   <component name="RunManager" selected="Python.restbasicdpl">
@@ -591,18 +588,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39679357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39679357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -629,6 +626,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="46" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -640,14 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,20 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/generic/tohive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6223278">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/generic/tohdfs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connections/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -704,27 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1888361">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5665083">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/restdpl/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/generic/tokafka.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5203366">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -782,9 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,15 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/tokafka.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,53 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbmodels/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.274194">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transformers/dummystring.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4183.4194">
-          <caret line="1" column="425070" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eerl/column/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eerl/parser/fromjson.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#89#100#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.12">
-          <caret line="40" column="98" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/tohdfs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,27 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18705882">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eerl/column/fromdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24941176">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3362944">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.95050764">
           <caret line="128" column="14" selection-start-line="128" selection-start-column="14" selection-end-line="128" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,19 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/createrestbasicdpl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2470589">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/templates/view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9441624">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,23 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/writers/testme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/restdpl/restbasicdpl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="50" selection-start-column="16" selection-end-line="52" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,15 +838,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connections/kafkaconn.py">
+    <entry file="file://$PROJECT_DIR$/eerl/parser/fromjson.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18705882">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.183518">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/producers/restdpl/restbasicdpl.py">
+    <entry file="file://$PROJECT_DIR$/eerl/dummystring.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -994,10 +854,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/models/dagtemplates/restdpl/restbasicdag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55055404">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writers/testme.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22022161">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/writers/writertest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.59626037">
           <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/createrestbasicdpl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1468144">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outpdrivers/tokafka.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.367036">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connections/kafkaconn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22022161">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5595568">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/producers/restdpl/restbasicdpl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7063712">
+          <caret line="89" column="24" selection-start-line="83" selection-start-column="8" selection-end-line="89" selection-end-column="24" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -1006,10 +922,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/writers/writer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3764706">
-          <caret line="70" column="82" selection-start-line="70" selection-start-column="82" selection-end-line="70" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outpdrivers/tohdfs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5595568">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eerl/column/fromdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.110110804">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eerl/parser/fromdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#89#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5138504">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

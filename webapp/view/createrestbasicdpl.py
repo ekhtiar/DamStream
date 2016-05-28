@@ -2,7 +2,7 @@ from webapp.models.dagtemplates.restdpl.restbasicdag import createdag
 from sqlalchemy.orm import sessionmaker
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo
 from dbmodels.dplmain import DplMain
-from dbmodels.connection import getengine
+from connections.mysqlconn import getengine
 from datetime import date
 from flask import redirect
 

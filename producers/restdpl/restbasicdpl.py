@@ -6,9 +6,9 @@ import logging
 import requests
 from sqlalchemy.orm import sessionmaker
 
-from dbmodels.connection import getengine
+from connections.mysqlconn import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
-from outpdrivers.generic.tokafka import sendtokafka
+from outpdrivers.tokafka import sendtokafka
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Description: This function has the logic to get the data. If the data is available

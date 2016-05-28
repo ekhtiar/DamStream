@@ -4,11 +4,11 @@
 
 # By convention the topic name should be damstream.dplname
 
-from pykafka import KafkaClient
+from connections.kafkaconn import getkafkaclient
 
 def sendtokafka(dplid, msg):
 
-    client = KafkaClient(hosts="DSambari.novalocal:6667")
+    client = getkafkaclient()
     topic = client.topics['damstream.'+dplid]
     with topic.get_sync_producer() as producer:
         producer.produce(msg)
