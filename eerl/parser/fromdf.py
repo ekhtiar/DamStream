@@ -5,4 +5,4 @@ import pandas
 
 # return dataframe, input: string json, output: dataframe
 def dataframetojson(df):
-    return df.DataFrame.to_json()
+    return df.to_json()

@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="987305d6-4af8-4035-a3ed-c4bd446e4e3e" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/airflow/dags/restdag.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eerl/testme.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/airflow/dags/testdruid.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/airflow" afterPath="$PROJECT_DIR$/airflow" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connections/kafkaconn.py" afterPath="$PROJECT_DIR$/connections/kafkaconn.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" afterPath="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eerl/column/fromdf.py" afterPath="$PROJECT_DIR$/eerl/column/fromdf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outpdrivers/tohdfs.py" afterPath="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writers/writer.py" afterPath="$PROJECT_DIR$/writers/writer.py" />
     </list>
     <ignored path="DSadapter.iws" />
@@ -32,7 +26,7 @@
     <SUITE FILE_PATH="coverage/DSadapter$createdag.coverage" NAME="createdag Coverage Results" MODIFIED="1461707783276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp/models" />
     <SUITE FILE_PATH="coverage/DSadapter$views.coverage" NAME="views Coverage Results" MODIFIED="1463248346931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp" />
     <SUITE FILE_PATH="coverage/DSadapter$pytransformers.coverage" NAME="pytransformers Coverage Results" MODIFIED="1464363552259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformers" />
-    <SUITE FILE_PATH="coverage/DSadapter$tohdfstest.coverage" NAME="tohdfstest Coverage Results" MODIFIED="1464483696039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/outpdrivers" />
+    <SUITE FILE_PATH="coverage/DSadapter$tohdfstest.coverage" NAME="tohdfstest Coverage Results" MODIFIED="1464487007070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/outpdrivers" />
     <SUITE FILE_PATH="coverage/DSadapter$writer.coverage" NAME="writer Coverage Results" MODIFIED="1464437893810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/writers" />
     <SUITE FILE_PATH="coverage/DSadapter$kafkaconsumer.coverage" NAME="kafkaconsumer Coverage Results" MODIFIED="1461846568252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp/models" />
     <SUITE FILE_PATH="coverage/DSadapter$writertest.coverage" NAME="writertest Coverage Results" MODIFIED="1464437356254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/writers" />
@@ -43,7 +37,7 @@
     <SUITE FILE_PATH="coverage/DSadapter$app.coverage" NAME="app Coverage Results" MODIFIED="1461433913353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp" />
     <SUITE FILE_PATH="coverage/DSadapter$restbasicdpl__1_.coverage" NAME="restbasicdpl (1) Coverage Results" MODIFIED="1463984098398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/outpdrivers/restdpl" />
     <SUITE FILE_PATH="coverage/DSadapter$damstream.coverage" NAME="damstream Coverage Results" MODIFIED="1464432714415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DSadapter$testme.coverage" NAME="testme Coverage Results" MODIFIED="1464483964207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eerl" />
+    <SUITE FILE_PATH="coverage/DSadapter$testme.coverage" NAME="testme Coverage Results" MODIFIED="1464487240613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eerl" />
     <SUITE FILE_PATH="coverage/DSadapter$pythonoperator.coverage" NAME="pythonoperator Coverage Results" MODIFIED="1461509305356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp/models/operators" />
     <SUITE FILE_PATH="coverage/DSadapter$writeitout.coverage" NAME="writeitout Coverage Results" MODIFIED="1464394179326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/writers" />
     <SUITE FILE_PATH="coverage/DSadapter$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1460643004419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webapp/models" />
@@ -62,11 +56,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="testme.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="writer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/writers/writer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62352943">
+              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromdf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eerl/parser/fromdf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="e#89#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transformer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromjson.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eerl/parser/fromjson.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testme.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eerl/testme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49882352">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -80,6 +118,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tohdfs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/outpdrivers/tohdfs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,15 +193,15 @@
         <option value="$PROJECT_DIR$/webapp/view/createrestbasicdpl.py" />
         <option value="$PROJECT_DIR$/producers/restdpl/restbasicdpl.py" />
         <option value="$PROJECT_DIR$/outpdrivers/tokafka.py" />
-        <option value="$PROJECT_DIR$/eerl/parser/fromdf.py" />
         <option value="$PROJECT_DIR$/transformers/transformer.py" />
         <option value="$PROJECT_DIR$/connections/kafkaconn.py" />
-        <option value="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
-        <option value="$PROJECT_DIR$/outpdrivers/tohdfstest.py" />
         <option value="$PROJECT_DIR$/dbmodels/outpdrivers/hdfs.py" />
-        <option value="$PROJECT_DIR$/writers/writer.py" />
-        <option value="$PROJECT_DIR$/eerl/testme.py" />
         <option value="$PROJECT_DIR$/eerl/column/fromdf.py" />
+        <option value="$PROJECT_DIR$/outpdrivers/tohdfstest.py" />
+        <option value="$PROJECT_DIR$/outpdrivers/tohdfs.py" />
+        <option value="$PROJECT_DIR$/eerl/testme.py" />
+        <option value="$PROJECT_DIR$/eerl/parser/fromdf.py" />
+        <option value="$PROJECT_DIR$/writers/writer.py" />
       </list>
     </option>
   </component>
@@ -191,6 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,7 +271,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="writers" />
+              <option name="myItemId" value="transformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,27 +307,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DSadapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DSproducer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eerl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="column" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,19 +317,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\outpdrivers" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\parser" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer" />
-      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\column" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\outpdrivers\generic" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\producers\restdpl\restbasicdpl" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp\templates\restdpl\restjsondpl" />
       <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\webapp\templates\includes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\outpdrivers" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\parser" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer" />
+      <recent name="C:\Users\Ekhtiar\PycharmProjects\DSproducer\eerl\column" />
     </key>
   </component>
   <component name="RunManager" selected="Python.testme">
@@ -624,7 +656,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39679357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39679357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -686,9 +718,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,9 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="46" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,31 +995,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8729412">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connections/kafkaconn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4364706">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outpdrivers/tohdfs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6388235">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,34 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writers/writer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="86" selection-start-line="62" selection-start-column="86" selection-end-line="62" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eerl/parser/fromjson.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31176472">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eerl/parser/fromdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4364706">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#89#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eerl/column/fromdf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1041,12 +1018,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eerl/parser/fromjson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transformers/transformer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outpdrivers/tohdfs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eerl/testme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49882352">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eerl/parser/fromdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#89#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writers/writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62352943">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
