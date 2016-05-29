@@ -19,7 +19,7 @@ def writetohdfs(dplid, outputname, directory, filename, uniquefilestamp, msg):
                 .filter(HDFSMetadata.dplid == dplid) \
                 .filter(HDFSMetadata.outputname == outputname) \
                 .order_by(HDFSMetadata.id.desc()).first()
-            uniquefilevalue = hdfsmetadata.incrementvalue + 1
+            uniquefilevalue = hdfsmetadata.uniquefilevalue + 1
         # if there is no last executed value then use 0
         except:
             uniquefilevalue = 0
@@ -27,7 +27,7 @@ def writetohdfs(dplid, outputname, directory, filename, uniquefilestamp, msg):
     # Get hdfs client
     hdfsclient = gethdfsclient()
     logging.info('writing to ' + directory + filename + uniquefilevalue)
-    hdfsclient.write(hdfs_path=directory + filename + uniquefilevalue, data=msg)
+    hdfsclient.write(hdfs_path=directory + filename + str(uniquefilevalue), data=msg)
     # Write to metadata
     # create data object
     hdfsmetadata = HDFSMetadata(dplid=dplid, outputname=outputname, uniquefilevalue=uniquefilevalue)

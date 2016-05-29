@@ -44,7 +44,8 @@ def write(dplid):
 
     # Loop through each msg from Kafka Queue
     for msg in balanced_consumer:
-
+        # Get the message from kafka
+        msg = msg.value
         # go through the string that has the output configurations and act according to the output_type
         # Sample string:
         # [{'output_type': 'hdfs', 'output_name': 'original', 'directory': '/user/admin/', 'filename': 'payconiq',
@@ -59,7 +60,7 @@ def write(dplid):
                 tranfuncs = output['tran_funcs'].split(',')
                 # Loging
                 logging.info('transforming : ' + tranfuncs + 'without funcconfigs:' + funcconfigs)
-                msg = transform(msg=msg.value, tranfuncs=tranfuncs, funcconfigs=funcconfigs)
+                msg = transform(msg=msg, tranfuncs=tranfuncs, funcconfigs=funcconfigs)
 
             if output['output_type'] == 'hdfs':
                 # Loging
@@ -68,7 +69,7 @@ def write(dplid):
                 outputname = output['output_name']
                 directory = output['directory']
                 filename = output['filename']
-                uniquefilestamp = outputs['unique_file_stamp']
+                uniquefilestamp = output['unique_file_stamp']
                 writetohdfs(dplid=dplid, outputname=outputname, directory=directory,
                             filename=filename, uniquefilestamp=uniquefilestamp, msg=msg)
                 # Loging

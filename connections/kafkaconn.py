@@ -5,4 +5,4 @@ def getkafkaclient():
     return client
 
 def zookeeperaddress():
-    return "DSambari.novalocal:6667"
+    return "DSambari.novalocal:2181"
