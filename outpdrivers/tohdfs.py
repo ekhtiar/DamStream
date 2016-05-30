@@ -26,6 +26,9 @@ def writetohdfs(dplid, outputname, directory, filename, uniquefilestamp, msg):
     # Get hdfs client
     hdfsclient = gethdfsclient()
     print 'writing to ' + directory + filename + str(uniquefilevalue)
+    # This will create the hdfs directory if it isn't created already, if it is this will do nothing
+    hdfsclient._mkdirs(directory)
+    # write to write to the given directory
     hdfsclient.write(hdfs_path=directory + filename + str(uniquefilevalue), data=msg)
     # Write to metadata
     # create data object
