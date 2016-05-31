@@ -2,13 +2,12 @@ import ast
 import datetime
 import json
 from urllib import urlencode
-import logging
 import requests
 from sqlalchemy.orm import sessionmaker
-
 from connections.mysqlconn import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
 from outpdrivers.tokafka import sendtokafka
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Description: This function has the logic to get the data. If the data is available
@@ -20,34 +19,58 @@ from outpdrivers.tokafka import sendtokafka
 # payload = (String) String variable of the payload data, the string will be converted to dict
 # url = (String) url of the endpoint
 
-def get_data(incrementvalue, dplid, payload, url, headers):
-    # Concatanate the incremental value with the url string (assuming the incremental variable
-    # has been formatted as the last variable in the url parameter
-    currenturl = url + str(incrementvalue)
+# This function pulls the data and sends it to a kafka
+def get_data(dplid, fullurl, method, payload, headers):
+    # convert to dict from string
+    if payload:
+        payload = ast.literal_eval(payload)
+    if headers:
+        headers = ast.literal_eval(headers)
+    # use requests library to get data
+    if method == 'POST':
+        r = requests.post(fullurl,
+                          headers=headers,
+                          data=json.dumps(payload))
+    if method == 'GET':
+        r = requests.get(fullurl,
+                          headers=headers,
+                          data=json.dumps(payload))
+    # check if reply is ok, if not then exit
+    if not r.ok:
+        print 'could not retreive data for ' + fullurl
+        return False
+
+    # if write to output and return true
+    # sendtokafka(dplid=dplid, msg=r.content)
+    print 'send data to kafka for ' + fullurl
+    return True
+
+
+def check_next(nexturl, method, payload, headers):
     # convert to dict from string
     payload = ast.literal_eval(payload)
     headers = ast.literal_eval(headers)
-    # use requests library to get data
-    r = requests.post(currenturl,
-                      headers=headers,
-                      data=json.dumps(payload))
-    # check if reply is ok, if not then exit
-    if not r.ok:
-        return False
 
-    # also check if the next set is available, if it isn't exit
-    nexturl = url + str(incrementvalue + 1)
     nextr = requests.post(nexturl,
                           headers=headers,
                           data=json.dumps(payload))
     if not nextr.ok:
+        print 'data for next url is not available'
         return False
-
-    # if write to output and return true
-    sendtokafka(dplid=dplid, msg=r.content)
-    logging.info('send data to kafka for ' + str(incrementvalue))
-
+    print 'data for next url is available'
     return True
+
+
+def offset_url_builder(url, urlparameters, incrementvariable, incrementvalue):
+    # Concatanate the incremental value with the url string (assuming the incremental variable
+    # form the url with help of urlencode, attach increment variable at the end
+    if urlparameters:
+        url = url + "?" + urlencode(
+            urlparameters) + "&" + incrementvariable + "=" + str(incrementvalue)
+        return url
+    if not urlparameters:
+        url = url + "?" + incrementvariable + "=" + str(incrementvalue)
+        return url
 
 
 def pull(dplid):
@@ -58,35 +81,73 @@ def pull(dplid):
 
     # Get the info object for this dpl
     restbasicdplinfo = session.query(RestbasicdplInfo).filter(RestbasicdplInfo.dplid == dplid).first()
-
-    # Try to get the initial value where we are supposed to start from
-    # Get the last executed value, if it is there, increase it by one to get the next value
-    try:
-        restbasicdplmetadata = session.query(RestbasicdplMetadata).filter(
-            RestbasicdplMetadata.dplid == dplid).order_by(RestbasicdplMetadata.id.desc()).first()
-        incrementvalue = restbasicdplmetadata.incrementvalue + 1
-    # if there is no last executed value then get initial incremental value
-    except:
-        incrementvalue = restbasicdplinfo.initialincrementvalue
-
-    # get payload
+    print 'retreived information from database for dpl: ' + restbasicdplinfo.dplid
+    # Get configurations
+    incrementtype = restbasicdplinfo.incrementtype
+    url = restbasicdplinfo.url
+    incrementvariable = restbasicdplinfo.incrementvariable
     payload = restbasicdplinfo.payload
-    # get url parameters and convert them to dict
-    urlparameters = ast.literal_eval(restbasicdplinfo.urlparameters)
-    # form the url with help of urlencode, attach increment variable at the end
-    url = restbasicdplinfo.url + "?" + urlencode(urlparameters) + "&" + restbasicdplinfo.incrementvariable + "="
-    # get headers
+    urlparameters = restbasicdplinfo.urlparameters
+    if urlparameters:
+        urlparameters = ast.literal_eval(urlparameters)
     headers = restbasicdplinfo.headers
+    method = restbasicdplinfo.method
 
-    while get_data(incrementvalue=incrementvalue, dplid=dplid, payload=payload, url=url, headers=headers):
+    # if the increment strategy is offset
+    if incrementtype == 'offset':
+        # Try to get the initial value where we are supposed to start from
+        # Get the last executed value, if it is there, increase it by one to get the next value
+        try:
+            restbasicdplmetadata = session.query(RestbasicdplMetadata).filter(
+                RestbasicdplMetadata.dplid == dplid).order_by(RestbasicdplMetadata.id.desc()).first()
+            incrementvalue = restbasicdplmetadata.incrementvalue + 1
+        # if there is no last executed value then get initial incremental value
+        except:
+            incrementvalue = restbasicdplinfo.initialincrementvalue
+
+
+
+        # form the url with help of urlencode, attach increment variable at the end
+        fullurl = offset_url_builder(url=url, urlparameters=urlparameters, incrementvariable=incrementvariable,
+                                     incrementvalue=incrementvalue)
+        nextfullurl = offset_url_builder(url=url, urlparameters=urlparameters, incrementvariable=incrementvariable,
+                                         incrementvalue=incrementvalue + 1)
+
+        while check_next(nexturl=nextfullurl, payload=payload, method=method, headers=headers):
+            # call get_data
+            if get_data(dplid=dplid, payload=payload, method=method, fullurl=fullurl, headers=headers):
+                # print output for logging
+                print 'wrote data to kafka for offset ' + str(incrementvalue)
+            else:
+                print 'did not write to kafka for' + str(incrementvalue)
+            # create data object
+            restbasicdplmetadata = RestbasicdplMetadata(dplid=dplid,
+                                                        executiondatetime=datetime.datetime.now(),
+                                                        incrementvalue=incrementvalue)
+            # store data object
+            session.add(restbasicdplmetadata)
+            session.commit()
+            # increase value by one
+            incrementvalue += restbasicdplinfo.incrementby
+
+            fullurl = offset_url_builder(url=url, urlparameters=urlparameters, incrementvariable=incrementvariable,
+                                         incrementvalue=incrementvalue)
+            nextfullurl = offset_url_builder(url=url, urlparameters=urlparameters, incrementvariable=incrementvariable,
+                                             incrementvalue=incrementvalue + 1)
+
+    # if the increment strategy is none
+    if incrementtype == 'none':
+
+        # call get_data
+        get_data(dplid=dplid, method=method, payload=payload, fullurl=url, headers=headers)
         # print output for logging
-        logging.info('got data for ' + str(incrementvalue))
+        print 'got data'
         # create data object
         restbasicdplmetadata = RestbasicdplMetadata(dplid=dplid,
                                                     executiondatetime=datetime.datetime.now(),
-                                                    incrementvalue=incrementvalue)
+                                                    incrementvalue=0)
         # store data object
         session.add(restbasicdplmetadata)
         session.commit()
-        # increase value by one
-        incrementvalue += restbasicdplinfo.incrementby
+
+pull('CurrencyConverter')

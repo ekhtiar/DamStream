@@ -2,7 +2,7 @@ from ...operators.bashoperator import bashoperator
 
 
 
-def createdag(dplid, scheduleinterval):
+def createdag(dplid, scheduleinterval, dt):
     # Create a file in the DAG folder of Airflow
     fo = open("./airflow/dags/" + dplid + ".py", "wb")
     # Write imports
@@ -11,7 +11,7 @@ def createdag(dplid, scheduleinterval):
     fo.write("from datetime import datetime \n")
     fo.write("\n")
     # Write the default arguments of the DAG
-    default_args = "{'owner': 'damstream','start_date': datetime(2016, 5, 10)}"
+    default_args = "{'owner': 'damstream','start_date': datetime("+dt+")}"
     fo.write("default_args = " + default_args)
     fo.write("\n")
     # DAG Configuration

@@ -1,8 +1,7 @@
 from webapp.run import app
-from flask import Flask, render_template, request, redirect
-from models.dagtemplates.restdpl.restbasicdag import createdag
+from flask import Flask, render_template, request
 from flask.ext.sqlalchemy import SQLAlchemy
-from view import createrestbasicdpl, outpdrivershdfs
+from view import createrestbasicdplview
 import os
 from flask import send_from_directory
 
@@ -45,12 +44,10 @@ def favicon():
 
 
 @app.route('/createrestbasicdpl', methods=['GET', 'POST'])
-def createrestjsondpl():
+def createrestbasicdpl():
     if request.method == 'POST':
         # Call the appropriate function
-        response = createrestbasicdpl.post(request)
+        response = createrestbasicdplview.post(request)
         return response
     else:
         return render_template('restdpl/restbasicdpl/createrestbasicdpl.html')
-
-
