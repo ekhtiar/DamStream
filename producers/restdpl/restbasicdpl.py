@@ -151,5 +151,3 @@ def pull(dplid):
         # store data object
         session.add(restbasicdplmetadata)
         session.commit()
-
-pull('CurrencyConverter')

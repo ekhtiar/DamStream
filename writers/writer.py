@@ -57,7 +57,7 @@ def write(dplid):
                     tranfuncs = output['tran_funcs'].split(',')
                     msg = transform(msg=msg, tranfuncs=tranfuncs, funcconfigs=funcconfigs)
 
-                if output['output_type'].lowercase().strip() == 'hdfs':
+                if output['output_type'].lower().strip() == 'hdfs':
                     # Loging
                     print 'writing to hdfs'
                     # Get hdfs client
@@ -72,7 +72,7 @@ def write(dplid):
                     # Loging
                     print 'wrote to hdfs succesfully'
 
-                if output['output_type'].lowercase().strip() == 'kafka':
+                if output['output_type'].lower().strip() == 'kafka':
                     # Loging
                     print 'writing to kafka'
                     # Get hdfs client

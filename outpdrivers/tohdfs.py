@@ -2,6 +2,8 @@ from connections.hdfsconn import gethdfsclient
 from connections.mysqlconn import getengine
 from sqlalchemy.orm import sessionmaker
 from dbmodels.outpdrivers.hdfs import HDFSMetadata
+import time
+import datetime
 
 
 def writetohdfs(dplid, outputname, directory, filename, extension, uniquefilestamp, msg):
@@ -22,6 +24,10 @@ def writetohdfs(dplid, outputname, directory, filename, extension, uniquefilesta
         # if there is no last executed value then use 0
         except:
             uniquefilevalue = 0
+    # If uniquefilestamp is timestamp then get the timestamp
+    if uniquefilestamp == 'timestamp':
+        ts = time.time()
+        uniquefilevalue = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d_h%H_m%M_s%S")
 
     # Get hdfs client
     hdfsclient = gethdfsclient()
@@ -29,7 +35,7 @@ def writetohdfs(dplid, outputname, directory, filename, extension, uniquefilesta
     # This will create the hdfs directory if it isn't created already, if it is this will do nothing
     hdfsclient._mkdirs(directory)
     # write to write to the given directory
-    hdfsclient.write(hdfs_path=directory + filename + str(uniquefilevalue), data=msg)
+    hdfsclient.write(hdfs_path=directory + filename + str(uniquefilevalue)+ extension, data=msg)
     # Write to metadata
     # create data object
     hdfsmetadata = HDFSMetadata(dplid=dplid, outputname=outputname, uniquefilevalue=uniquefilevalue)
