@@ -60,7 +60,7 @@ def post(request):
         session.commit()
 
         # create dag
-        createdag(dplid=dplid, dt=startdate, scheduleinterval=scheduleinterval)
+        createdag(dplid=dplid, scheduleinterval=scheduleinterval, dt=startdate)
 
     except KeyError, e:
         print 'KeyError  - reason %s' % str(e)

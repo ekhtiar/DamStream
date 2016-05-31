@@ -1,10 +1,12 @@
 import ast
+
+from sqlalchemy.orm import sessionmaker
+
 from connections.kafkaconn import getkafkaclient, zookeeperaddress
 from connections.mysqlconn import getengine
-from sqlalchemy.orm import sessionmaker
 from dbmodels.dplmain import DplMain
-from transformers.transformer import transform
 from outpdrivers.tohdfs import writetohdfs
+from transformers.transformer import transform
 
 
 # This function reads the ingested data from Kafka queue and writes to defined outputs
@@ -18,7 +20,8 @@ def write(dplid):
     # Get the info object for this dpl
     dplmain = session.query(DplMain).filter(DplMain.dplid == dplid).first()
     outputs = ast.literal_eval(dplmain.outputs)
-    funcconfigs = ast.literal_eval(dplmain.funcconfigs)
+    if dplmain.funcconfigs:
+        funcconfigs = ast.literal_eval(dplmain.funcconfigs)
 
     # Logging
     print 'writer running for ' + dplmain.dplid
