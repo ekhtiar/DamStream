@@ -6,11 +6,11 @@ Base = declarative_base()
 
 class DplMain(Base):
     __tablename__ = "dpl_main"
-    dplid = Column('dpl_id', String(20), primary_key=True)
+    dplid = Column('dpl_id', String(50), primary_key=True)
     createdat = Column('created_at', Date)
     startdate = Column('start_date', Date)
     dpltype = Column('dpl_type', String(50))
-    scheduleinterval = Column('schedule_interval', String(10))
+    scheduleinterval = Column('schedule_interval', String(50))
     outputs = Column('outputs', TEXT)
     funcconfigs = Column('function_configurations', TEXT)
 

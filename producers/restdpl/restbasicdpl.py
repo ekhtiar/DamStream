@@ -2,11 +2,12 @@ import ast
 import datetime
 import json
 from urllib import urlencode
+
 import requests
 from sqlalchemy.orm import sessionmaker
+
 from connections.mysqlconn import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
-from outpdrivers.tokafka import sendtokafka
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -81,7 +82,7 @@ def pull(dplid):
 
     # Get the info object for this dpl
     restbasicdplinfo = session.query(RestbasicdplInfo).filter(RestbasicdplInfo.dplid == dplid).first()
-    print 'retreived information from database for dpl: ' + restbasicdplinfo.dplid
+    print 'retreived information from database for dpl: ' + dplid
     # Get configurations
     incrementtype = restbasicdplinfo.incrementtype
     url = restbasicdplinfo.url

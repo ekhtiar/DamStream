@@ -19,16 +19,16 @@ class RestbasicdplMetadata(Base):
 
 class RestbasicdplInfo(Base):
     __tablename__ = "restbasicdpl_info"
-    dplid = Column('dpl_id', String(20), primary_key=True)
+    dplid = Column('dpl_id', String(50), primary_key=True)
     createdat = Column('created_at', Date)
     startdate = Column('start_date', Date)
     url = Column('url', String(50))
-    incrementtype = Column('increment_type', String(10))
-    incrementvariable = Column('increment_variable', String(20))
+    incrementtype = Column('increment_type', String(50))
+    incrementvariable = Column('increment_variable', String(50))
     initialincrementvalue = Column('initial_increment_value', INT)
     incrementby = Column('increment_by', INT)
     urlparameters = Column('url_parameters', String(50))
-    scheduleinterval = Column('schedule_interval', String(10))
+    scheduleinterval = Column('schedule_interval', String(50))
     method = Column('method', String(50))
     headers = Column('headers', TEXT)
     payload = Column('payload', TEXT)

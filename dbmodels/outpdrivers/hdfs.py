@@ -5,10 +5,10 @@ Base = declarative_base()
 
 class HDFSConfig(Base):
     __tablename__= "hdfs_config"
-    dplid = Column('dpl_id', String(20), primary_key=True)
-    outputtype = Column('output_type', String(10))
+    dplid = Column('dpl_id', String(50), primary_key=True)
+    outputtype = Column('output_type', String(50))
     directory = Column('directory', String(255))
-    filename = Column('filename', String(20))
+    filename = Column('filename', String(50))
     uniquefilestamp = Column('unique_file_stamp', String(50))
 
     def __init__(self, dplid, outputtype, directory, filename, uniquefilestamp):
@@ -21,8 +21,8 @@ class HDFSConfig(Base):
 class HDFSMetadata(Base):
     __tablename__ = 'hdfs_metadata'
     id = Column('id', INT, primary_key=True, autoincrement=True)
-    dplid = Column('dpl_id', String(20), primary_key=True)
-    outputname = Column('output_name', String(20))
+    dplid = Column('dpl_id', String(50), primary_key=True)
+    outputname = Column('output_name', String(50))
     uniquefilevalue = Column('unique_file_value', String(50))
 
     def __init__(self, dplid, outputname, uniquefilevalue):
