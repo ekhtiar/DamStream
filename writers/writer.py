@@ -64,9 +64,11 @@ def write(dplid):
                     outputname = output['output_name']
                     directory = output['directory']
                     filename = output['filename']
+                    extension = output['extension']
                     uniquefilestamp = output['unique_file_stamp']
                     writetohdfs(dplid=dplid, outputname=outputname, directory=directory,
-                                filename=filename, uniquefilestamp=uniquefilestamp, msg=msg)
+                                filename=filename, extension=extension,
+                                uniquefilestamp=uniquefilestamp, msg=msg)
                     # Loging
                     print 'wrote to hdfs succesfully'
 

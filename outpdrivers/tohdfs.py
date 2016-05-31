@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from dbmodels.outpdrivers.hdfs import HDFSMetadata
 
 
-def writetohdfs(dplid, outputname, directory, filename, uniquefilestamp, msg):
+def writetohdfs(dplid, outputname, directory, filename, extension, uniquefilestamp, msg):
     # Connect to database and get session object
     engine = getengine()
     Session = sessionmaker(bind=engine)
@@ -25,7 +25,7 @@ def writetohdfs(dplid, outputname, directory, filename, uniquefilestamp, msg):
 
     # Get hdfs client
     hdfsclient = gethdfsclient()
-    print 'writing to ' + directory + filename + str(uniquefilevalue)
+    print 'writing to ' + directory + filename + str(uniquefilevalue) + extension
     # This will create the hdfs directory if it isn't created already, if it is this will do nothing
     hdfsclient._mkdirs(directory)
     # write to write to the given directory
