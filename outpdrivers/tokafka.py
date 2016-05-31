@@ -6,9 +6,9 @@
 
 from connections.kafkaconn import getkafkaclient
 
-def sendtokafka(dplid, msg):
+def sendtokafka(topicname, msg):
 
     client = getkafkaclient()
-    topic = client.topics['damstream.'+dplid]
+    topic = client.topics['damstream.' + topicname]
     with topic.get_sync_producer() as producer:
         producer.produce(msg)

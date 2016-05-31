@@ -1,13 +1,11 @@
 import ast
-
 from sqlalchemy.orm import sessionmaker
-
 from connections.kafkaconn import getkafkaclient, zookeeperaddress
 from connections.mysqlconn import getengine
 from dbmodels.dplmain import DplMain
 from outpdrivers.tohdfs import writetohdfs
 from transformers.transformer import transform
-
+from outpdrivers.tokafka import sendtokafka
 
 # This function reads the ingested data from Kafka queue and writes to defined outputs
 # after doing the required transformation
@@ -59,7 +57,7 @@ def write(dplid):
                     tranfuncs = output['tran_funcs'].split(',')
                     msg = transform(msg=msg, tranfuncs=tranfuncs, funcconfigs=funcconfigs)
 
-                if output['output_type'] == 'hdfs':
+                if output['output_type'].lowercase().strip() == 'hdfs':
                     # Loging
                     print 'writing to hdfs'
                     # Get hdfs client
@@ -71,3 +69,12 @@ def write(dplid):
                                 filename=filename, uniquefilestamp=uniquefilestamp, msg=msg)
                     # Loging
                     print 'wrote to hdfs succesfully'
+
+                if output['output_type'].lowercase().strip() == 'kafka':
+                    # Loging
+                    print 'writing to kafka'
+                    # Get hdfs client
+                    topicname = output['topic_name']
+                    sendtokafka(topicname=topicname, msg=msg)
+                    # Loging
+                    print 'wrote to kafka succesfully'

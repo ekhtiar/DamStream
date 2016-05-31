@@ -8,6 +8,7 @@ from sqlalchemy.orm import sessionmaker
 
 from connections.mysqlconn import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
+from outpdrivers.tokafka import sendtokafka
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -42,7 +43,7 @@ def get_data(dplid, fullurl, method, payload, headers):
         return False
 
     # if write to output and return true
-    # sendtokafka(dplid=dplid, msg=r.content)
+    sendtokafka(topicname=dplid, msg=r.content)
     print 'send data to kafka for ' + fullurl
     return True
 

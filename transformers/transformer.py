@@ -16,6 +16,7 @@ def transform(msg, tranfuncs, funcconfigs):
             }
 
     for func in tranfuncs:
+        func = func.strip()
         if func == 'keep':
             column = (item['column'] for item in funcconfigs if item["func_name"] == 'keep').next()
             msg = eerl[func](msg, column)
