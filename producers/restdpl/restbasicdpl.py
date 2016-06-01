@@ -40,9 +40,8 @@ def get_data(dplid, fullurl, method, payload, headers):
         print 'could not retreive data for ' + fullurl
         return False
 
-    print r.content
     # if write to output and return true
-    # sendtokafka(topicname=dplid, msg=r.content)
+    sendtokafka(topicname=dplid, msg=r.content)
     print 'send data to kafka for ' + fullurl
     return True
 
