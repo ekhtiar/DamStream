@@ -1,8 +1,5 @@
-import time
-import datetime
+import requests
 
-ts = time.time()
+r = requests.get('http://api.fixer.io/latest')
 
-st = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d_h%H_m%M_s%S")
-
-print st
+print r.content

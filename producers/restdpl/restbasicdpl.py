@@ -2,10 +2,8 @@ import ast
 import datetime
 import json
 from urllib import urlencode
-
 import requests
 from sqlalchemy.orm import sessionmaker
-
 from connections.mysqlconn import getengine
 from dbmodels.restdpl.restbasicdpldb import RestbasicdplInfo, RestbasicdplMetadata
 from outpdrivers.tokafka import sendtokafka
@@ -35,15 +33,16 @@ def get_data(dplid, fullurl, method, payload, headers):
                           data=json.dumps(payload))
     if method == 'GET':
         r = requests.get(fullurl,
-                          headers=headers,
-                          data=json.dumps(payload))
+                         headers=headers,
+                         data=json.dumps(payload))
     # check if reply is ok, if not then exit
     if not r.ok:
         print 'could not retreive data for ' + fullurl
         return False
 
+    print r.content
     # if write to output and return true
-    sendtokafka(topicname=dplid, msg=r.content)
+    # sendtokafka(topicname=dplid, msg=r.content)
     print 'send data to kafka for ' + fullurl
     return True
 
@@ -107,8 +106,6 @@ def pull(dplid):
         except:
             incrementvalue = restbasicdplinfo.initialincrementvalue
 
-
-
         # form the url with help of urlencode, attach increment variable at the end
         fullurl = offset_url_builder(url=url, urlparameters=urlparameters, incrementvariable=incrementvariable,
                                      incrementvalue=incrementvalue)
@@ -141,9 +138,11 @@ def pull(dplid):
     if incrementtype == 'none':
 
         # call get_data
-        get_data(dplid=dplid, method=method, payload=payload, fullurl=url, headers=headers)
-        # print output for logging
-        print 'got data'
+        if get_data(dplid=dplid, payload=payload, method=method, fullurl=url, headers=headers):
+            # print output for logging
+            print 'wrote data to kafka '
+        else:
+            print 'did not write to kafka'
         # create data object
         restbasicdplmetadata = RestbasicdplMetadata(dplid=dplid,
                                                     executiondatetime=datetime.datetime.now(),
